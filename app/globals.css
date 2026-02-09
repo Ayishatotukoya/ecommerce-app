@@ -47,13 +47,13 @@
    (THIS IS WHAT YOU ADD)
 ================================ */
 :root {
-  --brand-primary: #4f46e5;
+  --brand-primary: #ee4c1bdc;
   /* Indigo */
-  --brand-primary-hover: #4338ca;
+  --brand-primary-hover: #fa640d;
 
   --brand-dark: #172649;
   /* Navbar / Footer */
-  --brand-bg: #c9ccd3; ;
+  --brand-bg: #738cc7; ;
   /* Page background */
 
   --brand-text-main: #111827;
@@ -112,9 +112,9 @@
 }
 
 .card {
-  @apply bg-card border border-border rounded-xl shadow-sm;
+  @apply bg-card border border-border  shadow-sm;
 }
 
 .section {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply max-w-7xl mx-auto px-2 sm:px-4 lg:px-6;
 }

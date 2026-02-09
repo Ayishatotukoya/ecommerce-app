@@ -7,7 +7,7 @@ type BannerProps = {
 
 export default function Banner({ heading, paragraph }: BannerProps) {
   return (
-    <section className="relative w-full h-[280px] sm:h-[360px] md:h-[420px] overflow-hidden rounded-xl">
+    <section className="relative w-full h-72 sm:h-80 md:h-96 overflow-hidden rounded-sm">
       {/* Background Image */}
       <Image
         src="/logo.png"

@@ -1,5 +1,6 @@
+import StarRating from "@/components/reviews/starRating";
 import { reviews } from "@/types/Rating"
-import StarRating from "./starRating";
+
 
 export default function ReviewList() {
 

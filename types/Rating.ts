@@ -1,4 +1,5 @@
 export type Review = {
+  user: ReactNode;
   id: string;
   product_id: string;
   user_id: string;

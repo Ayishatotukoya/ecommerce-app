@@ -1,13 +1,16 @@
 export interface Product {
+   category: string;
    id: string;  
    title: string;
    price: number;
    slug: string;
    product_images:  string[];
    category_id: string;
+   audiences_id: string;
    sizes: string[];
    colors: string[];
    description: string;
+   stock: number;
 }
 
 /* ---------------- IMAGE POOLS ---------------- */
@@ -81,6 +84,10 @@ const titles = [
 const colors = ["Black", "Blue", "Red", "White", "Brown", "Green"];
 const sizes = ["S", "M", "L", "XL"];
 
+function randomStock (){
+  return Math.floor(Math.random()* 50 )+ 1
+};
+
 function randomItem<T>(arr:T[]){
   return arr[Math.floor(Math.random() * arr.length)]
 }
@@ -110,10 +117,12 @@ export const products: Product[] = Array.from({ length: 150 }).map((_, i) => {
     slug: `${title.toLowerCase().replaceAll(" ", "-")}-${i + 1}`,
     price: randomPrice(),
     product_images: pool.sort(() => 0.5 - Math.random()).slice(0, 7),
-    category_id: String((i % 10) + 1),
+    category_id: String((i % 4) + 1),
+    audiences_id: String(((i % 3) + 1)),
     sizes,
     colors,
     description: `Premium ${title.toLowerCase()} designed for comfort, durability, and modern style.`,
+    stock: randomStock(),
   };
 });
 

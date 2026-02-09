@@ -28,8 +28,10 @@ export default function ProductPageCard() {
   const paginatedProducts = products.slice(start, end);
 
   return (
-    <div className="max-w-7xl flex flex-col items-center justify-between gap-4 px-4 py-8">
-      <h1 className="text-2xl font-bold mb-6">All Products</h1>
+    <div className="max-w-7xl flex flex-col items-center justify-between gap-4 mt-4">
+      <div className="w-full border px-1 sm:px-2 py-1 sm:py-2 text-center text-2xl bg-orange-700 text-white">
+        <h2 className="font-bold mb-2">Product Sales Collections</h2>
+      </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {paginatedProducts.map((product) => (

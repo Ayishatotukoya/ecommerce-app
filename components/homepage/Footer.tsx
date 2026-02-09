@@ -1,12 +1,16 @@
 import { LetterText } from "lucide-react";
 import Link from "next/link";
 import { BsFacebook, BsInstagram, BsTiktok, BsTwitter } from "react-icons/bs";
+import NewsLetter from "./newsLetter";
 
 export default function Footer() {
   return (
     <footer className=" bg-gray-900 text-gray-400 ">
-      <div className="relative flex flex-col justify-between px-4 py-3 md:flex-row md:justify-between md:items-center gap-4 border-t pt-4 text-sm md:px-12">
-        <div>
+      {/* newsletter */}
+      <NewsLetter />
+
+      <div className="relative flex flex-col justify-between px-4 py-14 md:flex-row md:justify-between md:items-center gap-4 border-t pt-4 text-sm md:px-12 ">
+        <div className=" mb-4">
           <h1 className="text-xl">STYLE_SPECTRUM</h1>
           <p>
             We have clothes that suits your style and which you’re proud to
@@ -72,7 +76,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className=" text-center">
+      <div className=" text-center pb-6">
         © {new Date().getFullYear()} StyleSpectrum. All rights reserved.
       </div>
     </footer>

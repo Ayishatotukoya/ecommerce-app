@@ -6,7 +6,7 @@ import ProductPageCard from "@/components/product/productpagecard";
 export default function ProductPage(){
 
 return(
-   <main className="section space-y-12">
+   <main className="section space-y-1">
    
            <Banner
              heading="Where style meets comfort"

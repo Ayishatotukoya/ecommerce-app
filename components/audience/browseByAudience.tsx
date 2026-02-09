@@ -3,21 +3,19 @@
 import CategorySection from "./categoryList";
 
 
-export default function BrowseByCat(){
+export default function BrowseByAud(){
   return (
         <CategorySection
           title={
-         <h3>
-          Browse By Category
-        </h3>
+         <h2 className="">
+         Browse By Audience
+        </h2>
         }
         subtitle={
          <p>
-            Discover styles that soothe your vision
+            Choose products tailored for your specific audience
          </p>
         }
-        limit={4}
-        showToggle={false}
       />
   );
 }

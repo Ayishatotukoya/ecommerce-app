@@ -1,16 +1,18 @@
 
 import Banner from "@/components/homepage/banner";
-import ReviewList from "@/components/reviews/reviewList";
-import BestSeller from "@/components/product/best-seller";
-import NewArrival from "@/components/product/new-arrival";
+import BestSeller from "@/components/homepage/homepage_component/best-seller";
+import NewArrival from "@/components/homepage/homepage_component/new-arrival";
+import LimitedStock from "@/components/homepage/homepage_component/limitedStock";
 import BrowseByCat from "@/components/category/browseByCat";
-import NewsLetter from "@/components/homepage/newsLetter";
+import ReviewList from "@/components/homepage/homepage_component/reviewList";
 
 export default function Home() {
  
 
   return (
-    <main className="section space-y-12">
+    <main className="section space-y-4">
+
+      {/* banner */}
       <Banner
         heading="Welcome to StyleSpectrum"
         paragraph="Discover premium fashion for men, women, and kids — curated just for you."
@@ -22,14 +24,14 @@ export default function Home() {
       {/* top product */}
       <BestSeller />
 
+      {/* Limited-Stock */}
+      <LimitedStock/> 
+
       {/* category  */}
       <BrowseByCat />
 
       {/* review */}
       <ReviewList />
-
-      {/* newsletter */}
-      <NewsLetter/>
     </main>
   );
 }

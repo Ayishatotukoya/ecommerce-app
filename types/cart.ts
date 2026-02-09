@@ -1,6 +1,9 @@
 import { Product } from "@/types/products";
 
-export interface CartItem {
+export type CartItem = {
   product: Product;
   amount: number;
-}
+  size?: string;
+  color?: string;
+};
+

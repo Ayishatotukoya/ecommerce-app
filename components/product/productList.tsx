@@ -1,51 +1,69 @@
-'use client'
-import { products } from "@/types/products"
-import ProductCard from "./ProductCard"
-import { useState } from "react";
+"use client";
 
+import { products } from "@/types/products";
+import { ArrowRight } from "lucide-react";
+import HomeProductCard from "./homeProductCard";
+import { useRouter } from "next/navigation";
 
 type ProductSectionProps = {
   title: React.ReactNode;
+  start?: number;
   limit?: number;
   showToggle?: boolean;
 };
 
-
 export default function ProductSection({
   title,
-  limit = 5,
+  start = 1,
+  limit = 8,
   showToggle = true,
-}: ProductSectionProps){
-  
-   const [showAll, setShowAll] = useState(false);
+}: ProductSectionProps) {
+  const router = useRouter();
 
-   const visible = showAll ? products : products.slice(0, limit);
-   return (
-     <div className="flex flex-col gap-6 justify-between items-center ">
+  const visible = products.slice(start, limit);
 
-     <div>{title}</div>
+  return (
+    <div className="card">
+      {/* Header */}
+      <div className="w-full flex justify-between items-center border px-2 sm:px-3 py-1 sm:py-2 bg-orange-700 text-white">
+        <div className="text-sm sm:text-base font-semibold">{title}</div>
 
-       <div
-         className="
-  grid 
-  grid-cols-2 
-  sm:grid-cols-3 
-  md:grid-cols-4 
-  lg:grid-cols-5 
-  gap-6
-"
-       >
-         {visible.map((products) => (
-           <ProductCard key={products.id} {...products} />
-         ))}
-       </div>
+        {showToggle && (
+          <button
+            onClick={() => router.push("/products")}
+            className="text-xs sm:text-sm py-1 sm:py-2 px-2 sm:px-3 flex gap-1 sm:gap-2 items-center hover:opacity-90"
+          >
+            Show All <ArrowRight size={16} />
+          </button>
+        )}
+      </div>
 
-        {showToggle && <button
-         onClick={() => setShowAll(!showAll)}
-         className="border py-2 px-3 rounded"
-       >
-         {showAll ? "Show Less" : "Show All"}
-       </button> }
-     </div>
-   );
+      {/* Scroll Row */}
+      <div
+        className="
+          flex 
+          gap-3 sm:gap-4 
+          overflow-x-auto 
+          px-2 sm:px-3
+          snap-x 
+          snap-mandatory
+          scrollbar-hide
+        "
+      >
+        {visible.map((product) => (
+          <div
+            key={product.id}
+            className="
+              min-w-36 
+              sm:min-w-44 
+              md:min-w-48
+              snap-start
+            "
+          >
+            <HomeProductCard {...product} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }

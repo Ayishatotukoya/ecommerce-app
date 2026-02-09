@@ -50,7 +50,6 @@ export default function Navbar() {
             onClick={() => setOpen(!open)}
             className="flex items-center gap-1 hover:text-indigo-400 transition"
           >
-           
             <Link
               href="/category"
               className="block px-4 py-2 hover:bg-gray-700"
@@ -84,31 +83,26 @@ export default function Navbar() {
           )}
         </div>
 
-
         {/*desktop link */}
         <div className="hidden md:hidden px-4 lg:flex gap-6">
-         
           <Link href="/" className="hover:text-indigo-400">
-           
             Home{" "}
           </Link>{" "}
           <Link href="/category" className="hover:text-indigo-400">
-           
             Categories{" "}
           </Link>{" "}
           <Link href="/products" className="hover:text-indigo-400">
-           
             Products{" "}
           </Link>{" "}
         </div>
         {/* CENTER — DESKTOP SEARCH */}
-        <div className="hidden md:flex flex-1 justify-center px-6">
+        {/* <div className="hidden md:flex flex-1 justify-center px-6">
           <div className="relative w-full max-w-md">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="
+            <Link href="/search">
+              <Search className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 w-6 h-6" />
+
+              <button
+                className="
                 w-full 
                 pl-10 
                 pr-4 
@@ -117,20 +111,20 @@ export default function Navbar() {
                 bg-gray-800 
                 text-sm
                 text-gray-100
-                placeholder-gray-400
                 focus:outline-none
                 focus:ring-2
                 focus:ring-indigo-500
               "
-            />
+              ><h4 className="text-gray-400 text-left">search products.....</h4></button>
+            </Link>
           </div>
-        </div>
+        </div> */}
         {/* RIGHT */}
         <div className="flex items-center gap-3 sm:gap-2">
           {/* Mobile Search Icon */}
           <Link
             href="/search"
-            className="md:hidden p-2 rounded-full hover:bg-gray-800 transition"
+            className=" p-2 rounded-full hover:bg-gray-800 transition"
           >
             <Search className="w-5 h-5" />
           </Link>

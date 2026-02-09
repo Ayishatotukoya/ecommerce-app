@@ -14,7 +14,7 @@ export default function CategoryCard(category:Category){
       
          <div className="relative w-full h-[180px]">
            <Image
-             src={category.category_image[0]}
+             src={category.category_image}
              alt={category.title}
              fill
              className="object-cover group-hover:scale-110 transition duration-300"
@@ -26,6 +26,7 @@ export default function CategoryCard(category:Category){
        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
          <h3 className="text-amber-100 text-xl font-bold">{category.title}</h3>
        </div>
+       
      </Link>
    );
 }
