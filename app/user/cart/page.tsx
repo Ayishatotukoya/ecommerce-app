@@ -1,6 +1,6 @@
 "use client";
-import CartCard from "@/app/cart/component/cartCard";
 import { useCartStore } from "@/lib/store/cart_store";
+import CartCard from "./component/cartCard";
 
 export default function Cart() {
   const { cartItems, setCartItems } = useCartStore();

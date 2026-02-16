@@ -24,7 +24,7 @@ export default function ProductClient({ product }: { product: Product }) {
     <div className="section">
       {/* Breadcrumb */}
       <div className="text-sm text-gray-500 mb-6">
-        <Link href="/">Home</Link> / <Link href="/products">Products</Link> /{" "}
+        <Link href="/">Home</Link> / <Link href="/user/products">Products</Link> /{" "}
         <span className="text-gray-800">{product.title}</span>
       </div>
 

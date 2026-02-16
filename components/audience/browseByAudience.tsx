@@ -1,6 +1,8 @@
 "use client"
 
-import CategorySection from "./categoryList";
+import CategorySection from "../category/categoryList";
+
+
 
 
 export default function BrowseByAud(){

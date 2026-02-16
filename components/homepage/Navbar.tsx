@@ -88,10 +88,10 @@ export default function Navbar() {
           <Link href="/" className="hover:text-indigo-400">
             Home{" "}
           </Link>{" "}
-          <Link href="/category" className="hover:text-indigo-400">
+          <Link href="/user/category" className="hover:text-indigo-400">
             Categories{" "}
           </Link>{" "}
-          <Link href="/products" className="hover:text-indigo-400">
+          <Link href="/user/products" className="hover:text-indigo-400">
             Products{" "}
           </Link>{" "}
         </div>

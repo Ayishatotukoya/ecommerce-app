@@ -28,7 +28,7 @@ export default function CategoryClient({
           {products.map((product) => (
             <Link
               key={product.id}
-              href={`/products/${product.id}`}
+              href={`/user/products/${product.id}`}
               className="border rounded-lg overflow-hidden hover:shadow transition"
             >
               <div className="relative h-48">

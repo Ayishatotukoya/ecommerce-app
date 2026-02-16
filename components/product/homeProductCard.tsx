@@ -14,7 +14,7 @@ export default function HomeProductCard(product: Product) {
       </span>
 
       {/* Image */}
-      <Link href={`/products/${product.id}`}>
+      <Link href={`/user/products/${product.id}`}>
         <div className="relative w-full h-44 bg-gray-100 overflow-hidden cursor-pointer">
           <Image
             src={product.product_images[0]}
