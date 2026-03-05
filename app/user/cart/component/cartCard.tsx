@@ -4,10 +4,10 @@ import Image from "next/image";
 
 
 export default function CartCard({cartItem, increaseAmount, decreaseAmount,removeItem} : {cartItem: CartItem, increaseAmount: () => void, decreaseAmount:() => void, removeItem:()=> void}){
+
+
    const oldPrice = cartItem.product.price + 4500;
-  const discount = Math.round(((oldPrice - cartItem.product.price) / oldPrice) * 100);
-
-
+   const discount = Math.round(((oldPrice - cartItem.product.price) / oldPrice) * 100);
 
    return (
      <main key={cartItem.product.id}>

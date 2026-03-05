@@ -1,9 +1,9 @@
 "use client";
 
-import { products } from "@/types/products";
 import { ArrowRight } from "lucide-react";
 import HomeProductCard from "./homeProductCard";
 import { useRouter } from "next/navigation";
+import { useProductStore } from "@/lib/store/product_store";
 
 type ProductSectionProps = {
   title: React.ReactNode;
@@ -20,7 +20,9 @@ export default function ProductSection({
 }: ProductSectionProps) {
   const router = useRouter();
 
-  const visible = products.slice(start, limit);
+  const{ productItems } = useProductStore();
+
+  const visible = productItems.slice(start, limit);
 
   return (
     <div className="card">
@@ -50,9 +52,9 @@ export default function ProductSection({
           scrollbar-hide
         "
       >
-        {visible.map((product) => (
+        {visible.map((productItems) => (
           <div
-            key={product.id}
+            key={productItems.id}
             className="
               min-w-36 
               sm:min-w-44 
@@ -60,7 +62,7 @@ export default function ProductSection({
               snap-start
             "
           >
-            <HomeProductCard {...product} />
+            <HomeProductCard {...productItems} />
           </div>
         ))}
       </div>

@@ -33,7 +33,7 @@ export default function CategorySection({
 "
       >
         {CategoryView.map((category) => (
-          <CategoryCard key={category.id} {...category} />
+          <CategoryCard key={category.id} category={category} />
         ))}
       </div>
 

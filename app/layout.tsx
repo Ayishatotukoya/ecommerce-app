@@ -13,21 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "style spectrum store",
-  description: "fashion e-commerce store built with nextjs",
+  title: "Style Spectrum Store",
+  description: "Fashion e-commerce store built with Next.js",
 };
 
-export default function UserRootLayout({
+export default function GlobalLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
-        <main className="flex-1 mt-5 mb-5">{children}</main>
+        {children}
       </body>
     </html>
   );

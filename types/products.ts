@@ -1,5 +1,6 @@
+
+
 export interface Product {
-   category: string;
    id: string;  
    title: string;
    price: number;
@@ -118,7 +119,7 @@ export const products: Product[] = Array.from({ length: 150 }).map((_, i) => {
     price: randomPrice(),
     product_images: pool.sort(() => 0.5 - Math.random()).slice(0, 7),
     category_id: String((i % 4) + 1),
-    audiences_id: String(((i % 3) + 1)),
+    audiences_id: String((i % 3) + 1),
     sizes,
     colors,
     description: `Premium ${title.toLowerCase()} designed for comfort, durability, and modern style.`,

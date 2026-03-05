@@ -4,15 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { reviews } from "@/types/Rating";
-import Product from "@/types/products";
 import StarRating from "@/components/reviews/starRating";
 import AddToCartButton from "./component/addToCartButton";
+import { useProductStore } from "@/lib/store/product_store";
+// import { products } from "@/types/products";
 
-export default function ProductClient({ product }: { product: Product }) {
+export default function ProductClient({ id }: { id: string }) {
+
+
+
+    const [activeImage, setActiveImage] = useState<number>(0);
+    const [selectedSize, setSelectedSize] = useState<string | null>(null);
+    const [selectedColor, setSelectedColor] = useState<string | null>(null);
+
+  const product = useProductStore((productItems) => productItems.getProduct(id));
+
+  if (!product) {
+    return <div className="p-10">Product not found</div>;
+  }
+
   const oldPrice = product.price + 4500;
-  const [activeImage, setActiveImage] = useState(product.product_images[0]);
-  const [selectedSize, setSelectedSize] = useState<string | null>(null);
-  const [selectedColor, setSelectedColor] = useState<string | null>(null);
 
   const productReviews = reviews.filter((r) => r.product_id === product.id);
 
@@ -24,7 +35,7 @@ export default function ProductClient({ product }: { product: Product }) {
     <div className="section">
       {/* Breadcrumb */}
       <div className="text-sm text-gray-500 mb-6">
-        <Link href="/">Home</Link> / <Link href="/user/products">Products</Link> /{" "}
+        <Link href="/">Home</Link> / <Link href="/user/products">Products</Link>/{""}
         <span className="text-gray-800">{product.title}</span>
       </div>
 
@@ -35,7 +46,7 @@ export default function ProductClient({ product }: { product: Product }) {
           {/* image */}
           <div className="relative w-full h-[420px] border rounded overflow-hidden">
             <Image
-              src={activeImage}
+              src={product.product_images[activeImage]}
               alt={product.title}
               fill
               className="object-cover"
@@ -45,9 +56,9 @@ export default function ProductClient({ product }: { product: Product }) {
             {product.product_images.map((img, i) => (
               <button
                 key={i}
-                onClick={() => setActiveImage(img)}
+                onClick={() => setActiveImage(i)}
                 className={`relative w-20 h-20 border rounded overflow-hidden
-                ${activeImage === img ? "ring-2 ring-black" : ""}`}
+                ${activeImage === i ? "ring-2 ring-black" : ""}`}
               >
                 <Image src={img} alt="" fill className="object-cover" />
               </button>
@@ -58,7 +69,9 @@ export default function ProductClient({ product }: { product: Product }) {
         {/* RIGHT */}
         <div className="space-y-5">
           {/* title */}
-          <h1 className="text-2xl md:text-3xl  font-semibold">{product.title}</h1>
+          <h1 className="text-2xl md:text-3xl  font-semibold">
+            {product.title}
+          </h1>
 
           {/* rating */}
           <div className="flex items-center gap-3">

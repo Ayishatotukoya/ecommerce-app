@@ -51,7 +51,7 @@ export default function Navbar() {
             className="flex items-center gap-1 hover:text-indigo-400 transition"
           >
             <Link
-              href="/category"
+              href="/user"
               className="block px-4 py-2 hover:bg-gray-700"
             >
               Home
@@ -62,13 +62,13 @@ export default function Navbar() {
           {open && (
             <div className="absolute left-0 mt-3 w-48 bg-gray-800 rounded-md shadow-lg overflow-hidden">
               <Link
-                href="/category"
+                href="/user/category"
                 className="block px-4 py-2 hover:bg-gray-700"
               >
                 Categories
               </Link>
               <Link
-                href="/products"
+                href="/user/products"
                 className="block px-4 py-2 hover:bg-gray-700"
               >
                 Products
@@ -85,7 +85,7 @@ export default function Navbar() {
 
         {/*desktop link */}
         <div className="hidden md:hidden px-4 lg:flex gap-6">
-          <Link href="/" className="hover:text-indigo-400">
+          <Link href="/user" className="hover:text-indigo-400">
             Home{" "}
           </Link>{" "}
           <Link href="/user/category" className="hover:text-indigo-400">
@@ -96,9 +96,9 @@ export default function Navbar() {
           </Link>{" "}
         </div>
         {/* CENTER — DESKTOP SEARCH */}
-        {/* <div className="hidden md:flex flex-1 justify-center px-6">
+         <div className="hidden md:flex flex-1 justify-center px-6">
           <div className="relative w-full max-w-md">
-            <Link href="/search">
+            <Link href="/user/search">
               <Search className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 w-6 h-6" />
 
               <button
@@ -118,33 +118,33 @@ export default function Navbar() {
               ><h4 className="text-gray-400 text-left">search products.....</h4></button>
             </Link>
           </div>
-        </div> */}
+        </div> 
         {/* RIGHT */}
         <div className="flex items-center gap-3 sm:gap-2">
           {/* Mobile Search Icon */}
           <Link
-            href="/search"
+            href="/user/search"
             className=" p-2 rounded-full hover:bg-gray-800 transition"
           >
             <Search className="w-5 h-5" />
           </Link>
 
           <Link
-            href="/cart"
+            href="/user/cart"
             className="p-2 rounded-full hover:bg-gray-800 transition"
           >
             <TbShoppingCart className="w-5 h-5" />
           </Link>
 
           <Link
-            href="/login"
+            href="/user/login"
             className="p-2 rounded-full hover:bg-gray-800 transition"
           >
             <User2 className="w-5 h-5" />
           </Link>
 
           <Link
-            href="/Notification"
+            href="/user/Notification"
             className="p-2 rounded-full hover:bg-gray-800 transition hidden md:block"
           >
             <Bell className="w-5 h-5" />

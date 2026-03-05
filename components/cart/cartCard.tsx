@@ -11,7 +11,7 @@ export default function CartCard({cartItem} : {cartItem: CartItem}){
      <main key={cartItem.product.id}>
        {/* left side  */}
        <div className="flex ">
-         <div className=" w-full h-[200px]  overflow-hidden rounded-lg cursor-pointer flex gap-4">
+         <div className=" w-full h-52  overflow-hidden rounded-lg cursor-pointer flex gap-4">
            <Image
              src={cartItem.product.product_images[0]}
              alt={cartItem.product.title}

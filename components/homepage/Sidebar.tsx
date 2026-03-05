@@ -8,32 +8,32 @@ export default function Sidebar() {
     <div className="space-y-4  text-indigo-700">
       <ul className="space-y-2 text- flex flex-col gap-4 ml-7 text-gray-100">
         <li className="mt-5 flex items-center gap-2">
-          <Link href="/">
+          <Link href="/user">
             <HomeIcon className="inline w-5 h-5 mr-2 " />
           </Link>
           Home
         </li>
         <li className=" flex items-center gap-2">
-          <Link href="/category">
+          <Link href="/user/category">
             <List className="inline w-5 h-5 mr-2" />
           </Link>
           Categories
         </li>
         <li className=" flex items-center gap-2">
-          <Link href="/products">
+          <Link href="/user/products">
             <BsLuggage className="inline w-5 h-5 mr-2" />
           </Link>
           Products
         </li>
         <li className=" flex items-center gap-2">
-          <Link href="/Notification">
+          <Link href="/user/Notification">
             <BellDot className="inline w-5 h-5 mr-2" />
           </Link>
           Notifications
         </li>
 
         <li className=" flex items-center gap-2 mb-4">
-          <Link href="/settings">
+          <Link href="/user/settings">
             <SettingsIcon className="inline w-5 h-5 mr-2" />
           </Link>
           Settings
